@@ -24,7 +24,7 @@ app.use((req,res,next) => {
 });
 
 
-// main server - express build
+// main server - express build added console log
 app.listen(8080, function() {
     console.log('Liberty Hill server is up and running!')
 });
