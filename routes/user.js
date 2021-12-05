@@ -13,7 +13,7 @@ router.get('/calendar',(req, res, next) => {
 
 router.get('/',(req, res, next) => {
     // res.sendFile(path.join(rootDir,'views','main.html'));
-    res.render('main', { pageTitle: 'Main - Liberty Hills - Craig Ranch Texas',
+    res.render('main-susan', { pageTitle: 'Main - Liberty Hills - Craig Ranch Texas',
     path: '/'  });
 });
 
