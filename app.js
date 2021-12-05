@@ -25,6 +25,6 @@ app.use((req,res,next) => {
 
 
 // main server - express build added console log
-app.listen(8080, function() {
+app.listen(80, function() {
     console.log('Liberty Hill web server is up and running!')
 });
