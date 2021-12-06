@@ -7,13 +7,13 @@ const rootDir = require('../util/path');
 // router function
 router.get('/calendar',(req, res, next) => {
     // res.sendFile(path.join(rootDir,'views','calendar.html'));
-    res.render('calendar', { pageTitle: 'Calendar - Liberty Hills - Craig Ranch Texas',
+    res.render('calendar', { pageTitle: 'Engineer Buddies',
     path: '/calendar'  });
 });
 
 router.get('/',(req, res, next) => {
     // res.sendFile(path.join(rootDir,'views','main.html'));
-    res.render('main-susan', { pageTitle: 'Main - Liberty Hills - Craig Ranch Texas',
+    res.render('main-engineer', { pageTitle: 'Engineer Buddies',
     path: '/'  });
 });
 
