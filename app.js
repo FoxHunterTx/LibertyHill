@@ -21,18 +21,18 @@ const httpsOptions = {
 
 // applications objects
 const app = express();
-const httpServer = http.createServer(app);
-const httpsServer = https.createServer(httpsOptions,app);
+
 
 // reroute port 80
 app.use((req, res, next) => {
     if (req.protocol === 'http') {
-        // console.log("http to https ");
-        // const httpsUrl = "https://" + req.headers.host + req.url;
-        console.log(httpsUrl);
-        res.redirect(301,httpsUrl);
-    } 
-      next();
+        console.log("not secure ");
+        const httpsUrl = "https://" + req.headers.host + req.url;
+        // console.log(httpsUrl);
+        return res.redirect(301,httpsUrl);
+    } else {
+       next();
+    }
 });
 
 app.set('view engine', 'ejs');
@@ -51,9 +51,11 @@ app.use((req,res,next) => {
 
 
 // main server - express build added console log
-httpServer.listen(httpPort, function() {
-    console.log('rerouting request to https')
-});
+// httpServer.listen(httpPort, function() {
+//    console.log('rerouting request to https')
+// });
+// const httpServer = http.createServer(app);
+const httpsServer = https.createServer(httpsOptions,app);
 httpsServer.listen(httpsPort,function() {
     console.log('starting up web server for engineeringbuddies.com')
 });
